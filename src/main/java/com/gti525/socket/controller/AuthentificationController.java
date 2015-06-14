@@ -18,12 +18,13 @@ import com.gti525.socket.model.User;
 public class AuthentificationController {
 
 	@RequestMapping(method = RequestMethod.GET)
-    public String afficherAuthentification() {
-		String user = LocalHostHelper.authCached();
-		if(user != null)
-			return "redirect:"+user;
-		else
+    public String afficherAuthentification(HttpServletRequest request) {
+		User user = (User)request.getSession().getAttribute("user");
+		if(user == null ){
 			return "authentification";
+		}
+		else
+			return "redirect:profil/"+user.getUserName();
     }
 	@RequestMapping(method = RequestMethod.POST)
     public String connecterUtilisateur(HttpServletRequest request, @RequestParam("userName") String userName,@RequestParam("password") String password) {
@@ -36,6 +37,6 @@ public class AuthentificationController {
 		}
 		request.getSession().removeAttribute("user");
 		request.getSession().setAttribute("user",user);
-		return "redirect:"+user.getUserName();
+		return "redirect:profil/"+user.getUserName();
     }
 }

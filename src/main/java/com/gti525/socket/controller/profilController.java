@@ -10,21 +10,14 @@ import com.gti525.socket.helper.LocalHostHelper;
 import com.gti525.socket.model.User;
 
 @Controller
-@RequestMapping("/{username}")
+@RequestMapping("/profil/{username}")
 public class profilController {
 
 	@RequestMapping(method = RequestMethod.GET)
 	 public String afficherProfil(HttpServletRequest request) {
 		User user = (User)request.getSession().getAttribute("user");
-		System.out.println(user);
-		String cachedUser = LocalHostHelper.authCached();
 		if(user == null ){
-			if(cachedUser != null){
-				//TODO modify the url if cached
-				return "profil";
-			}
-			else
-				return "redirect:authentification";
+			return "redirect:authentification";
 		}
 		else
 			return "profil";

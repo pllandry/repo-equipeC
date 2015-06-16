@@ -1,11 +1,5 @@
 /bin/
-/bin/
-/bin/
-/bin/
-/bin/
-/bin/
-/bin/
-/bin/
-/bin/
-/bin/
-/bin/
+WebContent/
+target/
+.classpath
+.project

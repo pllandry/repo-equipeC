@@ -20,7 +20,7 @@ public class Inscription {
 	      String host = "localhost";
 	      Properties properties = System.getProperties();
 	      properties.setProperty("mail.smtp.host", host);
-	      Session session = Session.getInstance(properties);
+	      Session session = Session.getDefaultInstance(properties);
 	      try{
 	         MimeMessage message = new MimeMessage(session);
 	         message.setFrom(new InternetAddress(from));

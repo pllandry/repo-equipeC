@@ -8,6 +8,6 @@
 </head>
 <body>
 <h1>Inscription Validée</h1>
-<p>Va checker tes e-mails sur les interwebz G! &lt;3</p>
+<p>Tu est officiellement inscrit sur Socket G! &lt;3</p>
 </body>
 </html>

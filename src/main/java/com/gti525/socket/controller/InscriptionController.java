@@ -25,14 +25,7 @@ public class InscriptionController {
     									@RequestParam("codePostal") String codePostal,
     									@RequestParam("province") String province) {
 		if(Inscription.verifyUniqueMail(mail)){
-			boolean correctlySent = Inscription.sendConfirmationEmail(mail, prenom);
-			if(correctlySent){
-				return "inscriptionValidee";
-			}
-			else{
-				return "redirect:inscription?erreur=serverDown";
-			}
-			
+			return "inscriptionValidee";
 		}
 		else{
 			return "redirect:inscription?erreur=BadMail";

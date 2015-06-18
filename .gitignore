@@ -3,3 +3,4 @@ WebContent/
 target/
 .classpath
 .project
+.settings/
